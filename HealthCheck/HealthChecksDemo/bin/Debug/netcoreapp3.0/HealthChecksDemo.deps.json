@@ -34,9 +34,7 @@
           "Microsoft.AspNetCore.Authentication.OAuth": "3.0.0.0",
           "Microsoft.AspNetCore.Authorization": "3.0.0.0",
           "Microsoft.AspNetCore.Authorization.Policy": "3.0.0.0",
-          "Microsoft.AspNetCore.Components.Authorization": "3.0.0.0",
           "Microsoft.AspNetCore.Components": "3.0.0.0",
-          "Microsoft.AspNetCore.Components.Forms": "3.0.0.0",
           "Microsoft.AspNetCore.Components.Server": "3.0.0.0",
           "Microsoft.AspNetCore.Components.Web": "3.0.0.0",
           "Microsoft.AspNetCore.Connections.Abstractions": "3.0.0.0",
@@ -70,6 +68,7 @@
           "Microsoft.AspNetCore.Metadata": "3.0.0.0",
           "Microsoft.AspNetCore.Mvc.Abstractions": "3.0.0.0",
           "Microsoft.AspNetCore.Mvc.ApiExplorer": "3.0.0.0",
+          "Microsoft.AspNetCore.Mvc.Components.Prerendering": "3.0.0.0",
           "Microsoft.AspNetCore.Mvc.Core": "3.0.0.0",
           "Microsoft.AspNetCore.Mvc.Cors": "3.0.0.0",
           "Microsoft.AspNetCore.Mvc.DataAnnotations": "3.0.0.0",
@@ -106,7 +105,6 @@
           "Microsoft.CSharp": "4.0.0.0",
           "Microsoft.Extensions.Caching.Abstractions": "3.0.0.0",
           "Microsoft.Extensions.Caching.Memory": "3.0.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions.Reference": "3.0.0.0",
           "Microsoft.Extensions.Configuration.Binder": "3.0.0.0",
           "Microsoft.Extensions.Configuration.CommandLine": "3.0.0.0",
           "Microsoft.Extensions.Configuration": "3.0.0.0",
@@ -117,23 +115,17 @@
           "Microsoft.Extensions.Configuration.KeyPerFile": "3.0.0.0",
           "Microsoft.Extensions.Configuration.UserSecrets": "3.0.0.0",
           "Microsoft.Extensions.Configuration.Xml": "3.0.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions.Reference": "3.0.0.0",
           "Microsoft.Extensions.DependencyInjection": "3.0.0.0",
-          "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.Reference": "3.0.0.0",
-          "Microsoft.Extensions.Diagnostics.HealthChecks.Reference": "3.0.0.0",
-          "Microsoft.Extensions.FileProviders.Abstractions.Reference": "3.0.0.0",
           "Microsoft.Extensions.FileProviders.Composite": "3.0.0.0",
           "Microsoft.Extensions.FileProviders.Embedded": "3.0.0.0",
           "Microsoft.Extensions.FileProviders.Physical": "3.0.0.0",
           "Microsoft.Extensions.FileSystemGlobbing": "3.0.0.0",
-          "Microsoft.Extensions.Hosting.Abstractions.Reference": "3.0.0.0",
           "Microsoft.Extensions.Hosting": "3.0.0.0",
           "Microsoft.Extensions.Http": "3.0.0.0",
           "Microsoft.Extensions.Identity.Core": "3.0.0.0",
           "Microsoft.Extensions.Identity.Stores": "3.0.0.0",
           "Microsoft.Extensions.Localization.Abstractions": "3.0.0.0",
           "Microsoft.Extensions.Localization": "3.0.0.0",
-          "Microsoft.Extensions.Logging.Abstractions.Reference": "3.0.0.0",
           "Microsoft.Extensions.Logging.Configuration": "3.0.0.0",
           "Microsoft.Extensions.Logging.Console": "3.0.0.0",
           "Microsoft.Extensions.Logging.Debug": "3.0.0.0",
@@ -144,8 +136,6 @@
           "Microsoft.Extensions.ObjectPool": "3.0.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "3.0.0.0",
           "Microsoft.Extensions.Options.DataAnnotations": "3.0.0.0",
-          "Microsoft.Extensions.Options.Reference": "3.0.0.0",
-          "Microsoft.Extensions.Primitives.Reference": "3.0.0.0",
           "Microsoft.Extensions.WebEncoders": "3.0.0.0",
           "Microsoft.JSInterop": "3.0.0.0",
           "Microsoft.Net.Http.Headers": "3.0.0.0",
@@ -334,20 +324,67 @@
       "Microsoft.Extensions.Configuration.Abstractions/3.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "3.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.19.46305"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/3.0.0": {},
+      "Microsoft.Extensions.DependencyInjection.Abstractions/3.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.19.46305"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        }
+      },
       "Microsoft.Extensions.Diagnostics.HealthChecks/3.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "3.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "3.0.0",
           "Microsoft.Extensions.Options": "3.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.19.46305"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {}
         }
       },
-      "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/3.0.0": {},
+      "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/3.0.0": {
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.19.46305"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {}
+        }
+      },
       "Microsoft.Extensions.FileProviders.Abstractions/3.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "3.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.19.46305"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
         }
       },
       "Microsoft.Extensions.Hosting.Abstractions/3.0.0": {
@@ -356,21 +393,79 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.0",
           "Microsoft.Extensions.FileProviders.Abstractions": "3.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "3.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.19.46305"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Hosting.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/3.0.0": {},
+      "Microsoft.Extensions.Logging.Abstractions/3.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.19.46305"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        }
+      },
       "Microsoft.Extensions.Options/3.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.0",
           "Microsoft.Extensions.Primitives": "3.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Options.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.19.46305"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Options.dll": {}
         }
       },
-      "Microsoft.Extensions.Primitives/3.0.0": {},
+      "Microsoft.Extensions.Primitives/3.0.0": {
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.19.46305"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/3.0.0": {},
       "Microsoft.Win32.Registry/4.6.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.6.0",
           "System.Security.Principal.Windows": "4.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.700.19.46214"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.700.19.46214"
+          },
+          "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.700.19.46214"
+          }
         }
       },
       "Newtonsoft.Json/12.0.2": {
@@ -452,9 +547,44 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.0.0",
           "System.Security.Principal.Windows": "4.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.700.19.46214"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.700.19.46214"
+          }
         }
       },
-      "System.Security.Principal.Windows/4.6.0": {},
+      "System.Security.Principal.Windows/4.6.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.700.19.46214"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.700.19.46214"
+          },
+          "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.700.19.46214"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Antiforgery/3.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Antiforgery.dll": {}
@@ -503,21 +633,9 @@
         },
         "compileOnly": true
       },
-      "Microsoft.AspNetCore.Components.Authorization/3.0.0.0": {
-        "compile": {
-          "Microsoft.AspNetCore.Components.Authorization.dll": {}
-        },
-        "compileOnly": true
-      },
       "Microsoft.AspNetCore.Components/3.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Components.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.AspNetCore.Components.Forms/3.0.0.0": {
-        "compile": {
-          "Microsoft.AspNetCore.Components.Forms.dll": {}
         },
         "compileOnly": true
       },
@@ -716,6 +834,12 @@
       "Microsoft.AspNetCore.Mvc.ApiExplorer/3.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Mvc.ApiExplorer.dll": {}
+        },
+        "compileOnly": true
+      },
+      "Microsoft.AspNetCore.Mvc.Components.Prerendering/3.0.0.0": {
+        "compile": {
+          "Microsoft.AspNetCore.Mvc.Components.Prerendering.dll": {}
         },
         "compileOnly": true
       },
@@ -935,12 +1059,6 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Configuration.Abstractions.Reference/3.0.0.0": {
-        "compile": {
-          "Microsoft.Extensions.Configuration.Abstractions.dll": {}
-        },
-        "compileOnly": true
-      },
       "Microsoft.Extensions.Configuration.Binder/3.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Configuration.Binder.dll": {}
@@ -1001,33 +1119,9 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions.Reference/3.0.0.0": {
-        "compile": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
-        },
-        "compileOnly": true
-      },
       "Microsoft.Extensions.DependencyInjection/3.0.0.0": {
         "compile": {
           "Microsoft.Extensions.DependencyInjection.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.Reference/3.0.0.0": {
-        "compile": {
-          "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.Extensions.Diagnostics.HealthChecks.Reference/3.0.0.0": {
-        "compile": {
-          "Microsoft.Extensions.Diagnostics.HealthChecks.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.Extensions.FileProviders.Abstractions.Reference/3.0.0.0": {
-        "compile": {
-          "Microsoft.Extensions.FileProviders.Abstractions.dll": {}
         },
         "compileOnly": true
       },
@@ -1052,12 +1146,6 @@
       "Microsoft.Extensions.FileSystemGlobbing/3.0.0.0": {
         "compile": {
           "Microsoft.Extensions.FileSystemGlobbing.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.Extensions.Hosting.Abstractions.Reference/3.0.0.0": {
-        "compile": {
-          "Microsoft.Extensions.Hosting.Abstractions.dll": {}
         },
         "compileOnly": true
       },
@@ -1094,12 +1182,6 @@
       "Microsoft.Extensions.Localization/3.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Localization.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.Extensions.Logging.Abstractions.Reference/3.0.0.0": {
-        "compile": {
-          "Microsoft.Extensions.Logging.Abstractions.dll": {}
         },
         "compileOnly": true
       },
@@ -1160,18 +1242,6 @@
       "Microsoft.Extensions.Options.DataAnnotations/3.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Options.DataAnnotations.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.Extensions.Options.Reference/3.0.0.0": {
-        "compile": {
-          "Microsoft.Extensions.Options.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.Extensions.Primitives.Reference/3.0.0.0": {
-        "compile": {
-          "Microsoft.Extensions.Primitives.dll": {}
         },
         "compileOnly": true
       },
@@ -2335,17 +2405,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AspNetCore.Components.Authorization/3.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Microsoft.AspNetCore.Components/3.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.AspNetCore.Components.Forms/3.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -2511,6 +2571,11 @@
       "sha512": ""
     },
     "Microsoft.AspNetCore.Mvc.ApiExplorer/3.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Mvc.Components.Prerendering/3.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -2695,11 +2760,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Configuration.Abstractions.Reference/3.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Microsoft.Extensions.Configuration.Binder/3.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -2750,27 +2810,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions.Reference/3.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Microsoft.Extensions.DependencyInjection/3.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.Reference/3.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Diagnostics.HealthChecks.Reference/3.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.FileProviders.Abstractions.Reference/3.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -2791,11 +2831,6 @@
       "sha512": ""
     },
     "Microsoft.Extensions.FileSystemGlobbing/3.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Hosting.Abstractions.Reference/3.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -2826,11 +2861,6 @@
       "sha512": ""
     },
     "Microsoft.Extensions.Localization/3.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Logging.Abstractions.Reference/3.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -2881,16 +2911,6 @@
       "sha512": ""
     },
     "Microsoft.Extensions.Options.DataAnnotations/3.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Options.Reference/3.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Primitives.Reference/3.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HealthChecksDemo.Configurations;
@@ -10,13 +9,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -42,14 +38,13 @@ namespace HealthChecksDemo
             var serviceProvider = services.BuildServiceProvider(); //This is a hack
             var databaseSettingsService = serviceProvider.GetRequiredService<IOptions<Database>>();
             services.AddHealthChecks()
-                .AddCheck<ExampleHealthCheck>("example_health_check") //This is a probe
-                .AddSqlServer(databaseSettingsService.Value.SqlConnectionString)
-                .AddMemoryHealthCheck("memory", failureStatus: HealthStatus.Unhealthy, thresholdInBytes: 3 * 1024L * 1024L); //This is another probe
+                .AddCheck<ExampleHealthCheck>("example_health_check", tags: new string[] { "customer-visible" }) //This is a probe
+                .AddSqlServer(databaseSettingsService.Value.SqlConnectionString, tags: new string[] { "customer-invisible" })
+                .AddMemoryHealthCheck("memory", failureStatus: HealthStatus.Unhealthy, thresholdInBytes: 3 * 1024L * 1024L, tags: new string[] { "customer-invisible" }); //This is another probe
 
             services.Configure<HealthCheckPublisherOptions>(options => //this is another way to add something to the configuration pipeline
             {
-                options.Delay = TimeSpan.FromSeconds(2);
-                options.Predicate = (check) => check.Tags.Contains("ready");
+                options.Delay = TimeSpan.FromSeconds(30);
             });
 
             services.AddSingleton<IHealthCheckPublisher, ReadinessPublisher>();
@@ -72,19 +67,70 @@ namespace HealthChecksDemo
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                //endpoints.MapHealthChecks("/health", new HealthCheckOptions()
-                //{
-                //    ResultStatusCodes =
-                //    {
-                //        [HealthStatus.Healthy] = StatusCodes.Status200OK,
-                //        [HealthStatus.Degraded] = StatusCodes.Status200OK,
-                //        [HealthStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
-                //    }
-                //});
-                //Custom Writer
-                endpoints.MapHealthChecks("/health", new HealthCheckOptions()
+                endpoints.MapHealthChecks("/health-simple", new HealthCheckOptions()
+                {
+                    ResultStatusCodes =
+                    {
+                        [HealthStatus.Healthy] = StatusCodes.Status200OK,
+                        [HealthStatus.Degraded] = StatusCodes.Status200OK,
+                        [HealthStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
+                    }
+                });
+                endpoints.MapHealthChecks("/health-detailed", new HealthCheckOptions()
                 {
                     ResponseWriter = WriteResponse,
+                    ResultStatusCodes =
+                    {
+                        [HealthStatus.Healthy] = StatusCodes.Status200OK,
+                        [HealthStatus.Degraded] = StatusCodes.Status200OK,
+                        [HealthStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
+                    }
+                });
+                endpoints.MapHealthChecks("/health-customer-visible", new HealthCheckOptions()
+                {
+                    ResponseWriter = WriteResponse,
+                    ResultStatusCodes =
+                    {
+                        [HealthStatus.Healthy] = StatusCodes.Status200OK,
+                        [HealthStatus.Degraded] = StatusCodes.Status200OK,
+                        [HealthStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
+                    },
+                    Predicate = new Func<HealthCheckRegistration, bool>((registration) =>
+                    {
+                        if (registration.Tags.Contains("customer-visible"))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    })
+                });
+                endpoints.MapHealthChecks("/health-customer-invisible", new HealthCheckOptions()
+                {
+                    ResponseWriter = WriteResponse,
+                    ResultStatusCodes =
+                    {
+                        [HealthStatus.Healthy] = StatusCodes.Status200OK,
+                        [HealthStatus.Degraded] = StatusCodes.Status200OK,
+                        [HealthStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
+                    },
+                    Predicate = new Func<HealthCheckRegistration, bool>((registration) =>
+                    {
+                        if (registration.Tags.Contains("customer-invisible"))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    })
+                });
+                endpoints.MapHealthChecks("/health-html", new HealthCheckOptions()
+                {
+                    ResponseWriter = WriteHtmlResponse,
                     ResultStatusCodes =
                     {
                         [HealthStatus.Healthy] = StatusCodes.Status200OK,
@@ -109,6 +155,26 @@ namespace HealthChecksDemo
                             p => new JProperty(p.Key, p.Value))))))))));
             return httpContext.Response.WriteAsync(
                 json.ToString(Formatting.Indented));
+        }
+
+        private static Task WriteHtmlResponse(HttpContext httpContext, HealthReport result)
+        {
+            httpContext.Response.ContentType = "text/html";
+            return httpContext.Response.WriteAsync(@"
+                    <html>
+                        <body>
+                            <ul>
+                                "
+                    +
+                    string.Join(Environment.NewLine, result.Entries.Select(pair =>
+                        "<li><b>" + pair.Key + " is " + pair.Value.Status.ToString() + "</b></li>"
+                        ))
+                    +
+                    @"
+                            </ul>
+                        </body>
+                    </html>
+                    ");
         }
     }
 }
