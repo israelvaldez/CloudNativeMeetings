@@ -67,6 +67,7 @@ namespace HealthChecksDemo
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("/health");
                 endpoints.MapHealthChecks("/health-simple", new HealthCheckOptions()
                 {
                     ResultStatusCodes =

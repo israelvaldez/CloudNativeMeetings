@@ -1,34 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Code\\CloudNativeMeeting\\FeatureFlags\\FeatureFlagsDemo\\FeatureFlagsDemo.csproj": {}
+    "C:\\github\\israelvaldez\\CloudNativeMeetings\\FeatureFlags\\FeatureFlagsDemo\\FeatureFlagsDemo.csproj": {}
   },
   "projects": {
-    "F:\\Code\\CloudNativeMeeting\\FeatureFlags\\FeatureFlagsDemo\\FeatureFlagsDemo.csproj": {
+    "C:\\github\\israelvaldez\\CloudNativeMeetings\\FeatureFlags\\FeatureFlagsDemo\\FeatureFlagsDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Code\\CloudNativeMeeting\\FeatureFlags\\FeatureFlagsDemo\\FeatureFlagsDemo.csproj",
+        "projectUniqueName": "C:\\github\\israelvaldez\\CloudNativeMeetings\\FeatureFlags\\FeatureFlagsDemo\\FeatureFlagsDemo.csproj",
         "projectName": "FeatureFlagsDemo",
-        "projectPath": "F:\\Code\\CloudNativeMeeting\\FeatureFlags\\FeatureFlagsDemo\\FeatureFlagsDemo.csproj",
-        "packagesPath": "C:\\Users\\israe\\.nuget\\packages\\",
-        "outputPath": "F:\\Code\\CloudNativeMeeting\\FeatureFlags\\FeatureFlagsDemo\\obj\\",
+        "projectPath": "C:\\github\\israelvaldez\\CloudNativeMeetings\\FeatureFlags\\FeatureFlagsDemo\\FeatureFlagsDemo.csproj",
+        "packagesPath": "C:\\Users\\ivaldez\\.nuget\\packages\\",
+        "outputPath": "C:\\github\\israelvaldez\\CloudNativeMeetings\\FeatureFlags\\FeatureFlagsDemo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "F:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\israe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ivaldez\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\ServiceFabricSDK.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\Microsoft SDKs\\Service Fabric\\packages": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://epicor-corp.pkgs.visualstudio.com/_packaging/CNA/nuget/v3/index.json": {}
+          "https://epicor-corp.pkgs.visualstudio.com/_packaging/CNA/nuget/v3/index.json": {},
+          "https://epicorautomation.pkgs.visualstudio.com/_packaging/EpicorAutomation/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
@@ -67,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100-preview8-013656\\RuntimeIdentifierGraph.json"
         }
       }
     }
