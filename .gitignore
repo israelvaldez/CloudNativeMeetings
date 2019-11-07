@@ -8,3 +8,6 @@
 /ManagedIdendities/SampleApp/obj
 /HealthCheck/HealthChecksDemo/obj/Release/netcoreapp3.0
 /.vs
+/ManagedIdendity/SampleApp/bin
+/ManagedIdendity/.vs
+/ManagedIdendity/SampleApp/obj
