@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/FeatureFlags/FeatureFlagsDemo/obj/Release/netcoreapp3.0
+/ManagedIdendities/.vs/ManagedIdendities
+/ManagedIdendities/SampleApp/bin
+/ManagedIdendities/SampleApp/obj
+/HealthCheck/HealthChecksDemo/obj/Release/netcoreapp3.0
+/.vs
