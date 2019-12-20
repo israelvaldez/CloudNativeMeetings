@@ -25,11 +25,11 @@ namespace SampleApp
                     {
                         var vaultUrl = $"https://{builtConfig["KeyVaultName"]}.vault.azure.net/";
 
-                        if (builtConfig["VaultAuthentication"] == "AzureAD")
+                        if (builtConfig["VaultSecurity"] == "AzureAD")
                         {
                             config.AddAzureKeyVault(vaultUrl, builtConfig["ClientId"], builtConfig["Secret"], new DefaultKeyVaultSecretManager());
                         }
-                        else if (builtConfig["VaultAuthentication"] == "SystemAssignedIdentity")
+                        else if (builtConfig["VaultSecurity"] == "SystemAssignedIdentity")
                         {
                             var azureServiceTokenProvider = new AzureServiceTokenProvider();
 
@@ -41,7 +41,7 @@ namespace SampleApp
                                 keyVaultClient,
                                 new DefaultKeyVaultSecretManager());
                         }
-                        else if (builtConfig["VaultAuthentication"] == "UserManagementIdentity")
+                        else if (builtConfig["VaultSecurity"] == "UserManagementIdentity")
                         {
                             var tokenProvider = new AzureServiceTokenProvider($"RunAs=App;AppId={builtConfig["AppId"]}");
 
