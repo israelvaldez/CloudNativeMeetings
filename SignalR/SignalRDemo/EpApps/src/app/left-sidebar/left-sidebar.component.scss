@@ -1,0 +1,94 @@
+::ng-deep{
+    .ep-view{
+        .ep-sidebar{
+            background: #4b616c;
+            /* For Tablet and Mobile */
+            @media screen and (max-width:770px){
+                background: #fff;
+            }
+            & > * > *{
+                background: none;
+            }
+            &.ep-sidebar-left{
+                border: 0;
+                /* For Desktop */
+                @media screen and (min-width:770px){
+                    box-shadow: 0 0 10px rgba(45,41,33,0.5);
+                    &.ep-collapsed{
+                        box-shadow: none;
+                    }
+                }
+            }
+            .ep-sidenav-list{
+                list-style: none;
+                padding: 0;
+                li{
+                    position: relative;
+                    &:after{
+                        content: "";
+                        display: block;
+                        width: 185px;
+                        height: 1px;
+                        background: rgba(255, 255, 255, 0.1);
+                        position: absolute;
+                        right: 0;
+                        bottom: -1px;
+                        /* For Tablet and Mobile */
+                        @media screen and (max-width:770px){
+                            background: rgba(0, 0, 0, 0.1);
+                        }
+                    }
+                    &:last-child:after{
+                        display: none;
+                    }
+                    a{
+                        display: block;
+                        padding: 20px 15px;
+                        overflow: hidden;
+                        i{
+                            width: 40px;
+                            color: #fff;
+                            display: block;
+                            position: relative;
+                            top: 3px;
+                            margin-right: 10px;
+                            float: left;
+                            /* For Tablet and Mobile */
+                            @media screen and (max-width:770px){
+                                color: #12c3f4;
+                                left: 5px;
+                            }
+                        }
+                        span,
+                        em{
+                            display: block;
+                            font-size: 15px;
+                            color: #fff;
+                            font-family: 'Montserrat';
+                            font-weight: 500;
+                            margin: 4px 0 0 50px;
+                            /* For Tablet and Mobile */
+                            @media screen and (max-width:770px){
+                                color: #112f41;
+                            }
+                        }
+                        em{
+                            font-size: 11px;
+                            line-height: 15px;
+                            font-style: normal;
+                            opacity: 0.6;
+
+                        }
+                        &:hover{
+                            background: rgba(0,0,0,0.05);
+                            text-decoration: none;
+                            i{
+                                color: #12c3f4;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
