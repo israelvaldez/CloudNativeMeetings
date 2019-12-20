@@ -14,3 +14,8 @@
 /ManagedIdentity/SampleApp/bin
 /ManagedIdentity/SampleApp/obj
 /ManagedIdentity/.vs
+/SignalR/SignalRDemo/.vs/SignalRDemo
+/SignalR/SignalRDemo/packages
+/SignalR/SignalRDemo/SignalRClient/bin/Debug
+/SignalR/SignalRDemo/SignalRClient/obj/Debug
+/SignalR/SignalRDemo/SignalRPortal/obj
