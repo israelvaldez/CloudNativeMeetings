@@ -2,6 +2,19 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+
+/.vs
+/ARMTemplates/Demo/.vs/Demo
+/ARMTemplates/Demo/Demo/bin/Debug/netcoreapp2.1
+/ARMTemplates/Demo/Demo/obj
+/FeatureFlags/FeatureFlagsDemo/obj/Release/netcoreapp3.0
+/HealthCheck/HealthChecksDemo/obj/Release/netcoreapp3.0
+/ManagedIdendity/SampleApp/obj
+/ManagedIdentity/.vs
+/ManagedIdentity/SampleApp/bin
+/ManagedIdentity/SampleApp/obj/Debug/netcoreapp3.0
+/ManagedIdentity/SampleApp/obj/Release/netcoreapp3.0
+/ManagedIdentity/SampleApp/obj
 /FeatureFlags/FeatureFlagsDemo/obj/Release/netcoreapp3.0
 /ManagedIdendities/.vs/ManagedIdendities
 /ManagedIdendities/SampleApp/bin
@@ -17,5 +30,8 @@
 /SignalR/SignalRDemo/.vs/SignalRDemo
 /SignalR/SignalRDemo/packages
 /SignalR/SignalRDemo/SignalRClient/bin/Debug
-/SignalR/SignalRDemo/SignalRClient/obj/Debug
+/SignalR/SignalRDemo/SignalRClient/obj/Release
+/SignalR/SignalRDemo/SignalRPortal/obj/Debug/netcoreapp2.2
+/SignalR/SignalRDemo/SignalRPortal/obj/Release/netcoreapp2.2
 /SignalR/SignalRDemo/SignalRPortal/obj
+
